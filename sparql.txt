@@ -1,0 +1,11 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dbpedia-owl: <http://dbpedia.org/ontology/>
+SELECT ?artist ?info ?birth ?death ?piclink
+{
+  ?artist foaf:name "Karl Hagemeister"@de .
+  ?artist rdfs:comment ?info.
+  ?artist dbpedia-owl:birthDate ?birth.
+  ?artist dbpedia-owl:deathDate ?death.
+  ?artist dbpedia-owl:thumbnail ?piclink.
+}
