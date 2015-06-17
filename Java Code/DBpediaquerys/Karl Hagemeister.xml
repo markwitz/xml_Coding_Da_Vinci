@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<sparql xmlns="http://www.w3.org/2005/sparql-results#">
+  <head>
+    <variable name="artist"/>
+    <variable name="info"/>
+    <variable name="birth"/>
+    <variable name="death"/>
+    <variable name="piclink"/>
+  </head>
+  <results>
+    <result>
+      <binding name="artist">
+        <uri>http://de.dbpedia.org/resource/Karl_Hagemeister</uri>
+      </binding>
+      <binding name="info">
+        <literal xml:lang="de">Karl Hagemeister (* 12. März 1848 in Werder (Havel); † 5. August 1933 ebenda; auch Carl Hagemeister geschrieben) war ein deutscher Maler, der sich in seiner Eigenständigkeit keiner stilistischen Richtung zuordnen lässt.</literal>
+      </binding>
+      <binding name="birth">
+        <literal datatype="http://www.w3.org/2001/XMLSchema#date">1848-03-12Z</literal>
+      </binding>
+      <binding name="death">
+        <literal datatype="http://www.w3.org/2001/XMLSchema#date">1933-08-05Z</literal>
+      </binding>
+      <binding name="piclink">
+        <uri>http://commons.wikimedia.org/wiki/Special:FilePath/Grab-Karl-Hagemeister.JPG?width=300</uri>
+      </binding>
+    </result>
+  </results>
+</sparql>

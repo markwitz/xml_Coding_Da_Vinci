@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<sparql xmlns="http://www.w3.org/2005/sparql-results#">
+  <head>
+    <variable name="artist"/>
+    <variable name="info"/>
+    <variable name="birth"/>
+    <variable name="death"/>
+    <variable name="piclink"/>
+  </head>
+  <results>
+    <result>
+      <binding name="artist">
+        <uri>http://de.dbpedia.org/resource/Carl_Saltzmann</uri>
+      </binding>
+      <binding name="info">
+        <literal xml:lang="de">Carl Saltzmann (* 23. September 1847 in Berlin; † 14. Januar 1923 in Potsdam) war ein deutscher Landschafts- und Marinemaler.</literal>
+      </binding>
+      <binding name="birth">
+        <literal datatype="http://www.w3.org/2001/XMLSchema#date">1847-09-23Z</literal>
+      </binding>
+      <binding name="death">
+        <literal datatype="http://www.w3.org/2001/XMLSchema#date">1923-01-14Z</literal>
+      </binding>
+      <binding name="piclink">
+        <uri>http://de.wikipedia.org/wiki/Special:FilePath/Saltzmann_Foto.JPG?width=300</uri>
+      </binding>
+    </result>
+  </results>
+</sparql>
