@@ -2,4 +2,8 @@
  *
  *= require_self
  *= require font-awesome
+ *= require _bootstrap
+ *= require _bootstrap-sprockets
+ *= require _bootstrap-mincer
+ *= require _bootstrap-compass
  */
