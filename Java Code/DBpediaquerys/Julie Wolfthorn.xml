@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<sparql xmlns="http://www.w3.org/2005/sparql-results#">
+  <head>
+    <variable name="artist"/>
+    <variable name="info"/>
+    <variable name="birth"/>
+    <variable name="death"/>
+    <variable name="piclink"/>
+  </head>
+  <results>
+    <result>
+      <binding name="artist">
+        <uri>http://de.dbpedia.org/resource/Julie_Wolfthorn</uri>
+      </binding>
+      <binding name="info">
+        <literal xml:lang="de">Julie Wolfthorn (auch Wolf-Thorn, geborene Wolf oder Wolff; * 8. Januar 1864 in Thorn, Westpreußen; † 29. Dezember 1944 im Ghetto Theresienstadt) war eine deutsche Malerin und Grafikerin.</literal>
+      </binding>
+      <binding name="birth">
+        <literal datatype="http://www.w3.org/2001/XMLSchema#date">1864-01-08Z</literal>
+      </binding>
+      <binding name="death">
+        <literal datatype="http://www.w3.org/2001/XMLSchema#date">1944-12-29Z</literal>
+      </binding>
+      <binding name="piclink">
+        <uri>http://commons.wikimedia.org/wiki/Special:FilePath/Julie_Wolfthorn.JPG?width=300</uri>
+      </binding>
+    </result>
+  </results>
+</sparql>

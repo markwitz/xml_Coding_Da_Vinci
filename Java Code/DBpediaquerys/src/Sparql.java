@@ -20,8 +20,26 @@ public class Sparql {
     ResultSet results = null;
     QueryExecution qe = null;
     List<String> strList= new ArrayList<String>();
-    strList.add("Karl Hagemeister");
+    /* all names */
+    strList.add("Walter Leistikow");
+    strList.add("Hermann Eschke");
     strList.add("Carl Saltzmann");
+    strList.add("Max Liebermann");
+    strList.add("George Mosson"); // no result !!!
+    strList.add("Ulrich Hübner");
+    strList.add("Hans Herrmann"); // no result !!!
+    strList.add("Franz Skarbina");
+    strList.add("Lesser Ury");
+    strList.add("Konrad Alexander Müller-Kurzwelly");
+    strList.add("Karl Hagemeister");
+    strList.add("Gerhard Geidel"); // no result !!!
+    strList.add("Julie Wolfthorn");
+    strList.add("August Gaul");
+    strList.add("Anton von Werner");
+    strList.add("Adolph von Menzel");
+    strList.add("Carl Kayser-Eichberg");
+    strList.add("Elisabeth von Eicken"); // no result !!!
+    /* ********* */
     String str;
     String resultString = "hmm";
     String service = "http://de.dbpedia.org/sparql";

@@ -1,0 +1,18 @@
+# Kurze Anleitung wie man alle Namen der Künstler aus den XML Datein mit BaseX und XQuery herausbekommt.
+
+1. .Jar von BaseX herunterladen. (Ich hatte unter Mac zusätzlich 'brew install basex' im Terminal ausgeführt, aber das wird wohl egal sein.)
+2. Den Ordner (mit allen heruntergeladenen XML Dateien) als 'Datenbank' in der GUI starten.
+3. Nun sollte die Datenbank automatisch von BaseX geparst sein.
+4. Zum herausfiltern der Namen den folgenden Befehl in die obere Befehlszeile eingeben (vorher auf XQuery umstellen) und auf Play drücken:
+
+	declare namespace lido="http://www.lido-schema.org"; 
+
+	for $actor in distinct-values(//lido:actor/lido:nameActorSet/lido:appellationValue/text())
+	return $actor
+
+# Damit filtern wir von 71 Namen auf 18 herunter.
+
+# Die größte Schwierigkeit bestand darin, zu verstehen wie man diesen 'namespace' zum laufen bekommt.
+# Nachdem endlich der Befehlt '//lido:actor/lido:nameActorSet/lido:appellationValue/text()' alle Namen
+# ausgegeben hat, habe ich festgestellt, dass es doppelte Namen gibt. Deshalb wurde eine Funktion
+# eingebettet, welche die Duplikate herausfiltert.

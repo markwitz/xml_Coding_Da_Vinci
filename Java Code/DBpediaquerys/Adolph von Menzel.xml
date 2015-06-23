@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<sparql xmlns="http://www.w3.org/2005/sparql-results#">
+  <head>
+    <variable name="artist"/>
+    <variable name="info"/>
+    <variable name="birth"/>
+    <variable name="death"/>
+    <variable name="piclink"/>
+  </head>
+  <results>
+    <result>
+      <binding name="artist">
+        <uri>http://de.dbpedia.org/resource/Adolph_von_Menzel</uri>
+      </binding>
+      <binding name="info">
+        <literal xml:lang="de">Adolph Friedrich Erdmann von Menzel (* 8. Dezember 1815 in Breslau; † 9. Februar 1905 in Berlin), geadelt 1898, war Maler, Zeichner und Illustrator. Er gilt als der bedeutendste deutsche Realist des 19. Jahrhunderts. Sein Werk ist außerordentlich vielfältig; bekannt und zu Lebzeiten hoch geehrt wurde er vor allem durch seine historisierenden Darstellungen aus dem Leben Friedrichs des Großen.</literal>
+      </binding>
+      <binding name="birth">
+        <literal datatype="http://www.w3.org/2001/XMLSchema#date">1815-12-08Z</literal>
+      </binding>
+      <binding name="death">
+        <literal datatype="http://www.w3.org/2001/XMLSchema#date">1905-02-09Z</literal>
+      </binding>
+      <binding name="piclink">
+        <uri>http://commons.wikimedia.org/wiki/Special:FilePath/Bundesarchiv_Bild_183-R30367,_Adolph_von_Menzel.jpg?width=300</uri>
+      </binding>
+    </result>
+  </results>
+</sparql>

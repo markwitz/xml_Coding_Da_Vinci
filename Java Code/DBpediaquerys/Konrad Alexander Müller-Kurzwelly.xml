@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<sparql xmlns="http://www.w3.org/2005/sparql-results#">
+  <head>
+    <variable name="artist"/>
+    <variable name="info"/>
+    <variable name="birth"/>
+    <variable name="death"/>
+    <variable name="piclink"/>
+  </head>
+  <results>
+    <result>
+      <binding name="artist">
+        <uri>http://de.dbpedia.org/resource/Konrad_Alexander_Müller-Kurzwelly</uri>
+      </binding>
+      <binding name="info">
+        <literal xml:lang="de">Konrad Alexander Müller-Kurzwelly (* 29. Juli 1855 in Chemnitz; † 4. Juli 1914 in Berlin) war ein deutscher Maler. Seine Bekanntheit erlangte er als einflussreicher Künstler des Naturalismus und deutschen Impressionismus.</literal>
+      </binding>
+      <binding name="birth">
+        <literal datatype="http://www.w3.org/2001/XMLSchema#date">1855-07-29Z</literal>
+      </binding>
+      <binding name="death">
+        <literal datatype="http://www.w3.org/2001/XMLSchema#date">1914-07-04Z</literal>
+      </binding>
+      <binding name="piclink">
+        <uri>http://commons.wikimedia.org/wiki/Special:FilePath/Müller-Kurzwelly_Bachlauf.jpg?width=300</uri>
+      </binding>
+    </result>
+  </results>
+</sparql>
