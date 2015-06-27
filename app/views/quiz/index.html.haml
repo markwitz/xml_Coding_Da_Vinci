@@ -1,0 +1,11 @@
+%h1 Quiz#index
+%p Find me in app/views/quiz/index.html.haml
+%div.question-box
+  -@questions.each do |question|
+    %div.question-image
+      %img{ src: "https://www.flickr.com/photos/91015233@N08/16925072491/" }
+    %div.question-set
+      %h3.title=question[:title]
+      -question[:answers].each do |answer|
+        %div{class:'answers', data: { right: answer[:right].to_s } }
+          =answer[:title]

@@ -6,4 +6,5 @@
  *= require _bootstrap-sprockets
  *= require _bootstrap-mincer
  *= require _bootstrap-compass
+ *= require quiz
  */

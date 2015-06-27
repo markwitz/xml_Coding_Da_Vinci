@@ -22,7 +22,8 @@ class OpenData::QuizBuilder
 
   def create_question
     {
-      title: "Von wem ist dieses Bild",
+      title: "Von wem ist dieses Bild?",
+      flickr_link: @informations[@current_index][:flickr_link],
       answers: create_answers
     }
   end
