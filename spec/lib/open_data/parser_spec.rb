@@ -1,5 +1,5 @@
-require 'rails_helper'
 require 'open_data/parser'
+require 'nokogiri'
 
 describe OpenData::Parser do
   let(:informations) do
