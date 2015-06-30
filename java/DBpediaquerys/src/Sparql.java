@@ -62,7 +62,7 @@ public class Sparql {
       Query query = QueryFactory.create(queryString);
       qe = QueryExecutionFactory.sparqlService(service, query);
       results = qe.execSelect();
-      BufferedWriter out = new BufferedWriter(new FileWriter(str+".xml"));
+      BufferedWriter out = new BufferedWriter(new FileWriter(str.toLowerCase().replaceAll(" ", "_") + ".xml"));
       try{
         resultString = ResultSetFormatter.asXMLString(results);
         System.out.println(resultString);
