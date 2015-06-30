@@ -26,7 +26,7 @@ public class Sparql {
     strList.add("Carl Saltzmann");
     strList.add("Max Liebermann");
     strList.add("George Mosson"); // no result !!!
-    strList.add("Ulrich Hübner");
+    strList.add("Ulrich Hübner"); // no result !!!
     strList.add("Hans Herrmann"); // no result !!!
     strList.add("Franz Skarbina");
     strList.add("Lesser Ury");
