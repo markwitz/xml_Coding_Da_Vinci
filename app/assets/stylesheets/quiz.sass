@@ -1,2 +1,39 @@
-// .container
-//   width: 100%
+$simple_green: #4D642D
+
+.container
+  max-width: 900px
+  box-shadow: 12px 0 15px -4px rgba(0, 0, 0, 0.8), -12px 0 8px -4px rgba(0, 0, 0, 0.8)
+
+.quesiton-box
+  background: grey
+  position: relative
+  width: 80%
+
+.question-image
+  width: 50%
+.question-set
+  padding-top: 50px
+  width: 50%
+  .title
+    margin-bottom: 40px
+  .answer
+    border: 1px solid
+    width: 100%
+    margin: 10px 0
+    padding: 10px 10px
+  .hoverable
+    &:hover
+      background: $simple_green
+      color: white
+
+.author-info-button
+  float: left
+
+.next-slide
+  float: right
+
+.hidden
+  visibility: hidden
+
+.shown
+  visibility: hidden
