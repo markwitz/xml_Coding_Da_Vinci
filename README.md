@@ -1,6 +1,9 @@
 # xml_Coding_Da_Vinci
 Repository zum studentischen XML-Projekt im Rahmen des Wettbewerbs "Coding Da Vinci".
 
+##Project Idea
+Unsere Projektidee ist ein interaktives Bilderquiz, bei dem ein Gemälde und eine Frage sowie vier Antworten dazu angezeigt werden. Die Frage bezieht sich zum Beispiel auf den Künstler, die Epoche, die eingesetzte Technik oder ein ähnliches Thema, das zu dem jeweiligen Gemälde gestellt werden kann. Bei der Auswahl einer Antwort werden anschließend alle falschen Antwortmöglichkeiten rot und die richtige grün eingefärbt. Außerdem werden weitere Zusatzinformationen über das Werk und den Künstler angezeigt. Die nächste Frage kann beantwortet werden, wenn man auf den entsprechenden Button klickt.
+
 ##How run the quiz locally
 ###Install Requirements
 Damit das Projekt Lokal auf dem Rechner ausgeführt werden kann, benötigt das
