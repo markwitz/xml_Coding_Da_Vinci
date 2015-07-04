@@ -1,18 +1,18 @@
 # xml_Coding_Da_Vinci
-XML Projekt Coding Da Vinci
+Repository zum studentischen XML-Projekt im Rahmen des Wettbewerbs "Coding Da Vinci".
 
 ##How run the quiz locally
 ###Install Requirements
 Damit das Projekt Lokal auf dem Rechner ausgeführt werden kann, benötigt das
-System eine installierte Ruby version. Mit jeder installierten Ruby version
-wird Rubygems mit installiert, welches das Installieren von Externen
+System eine installierte Ruby-Version. Mit jeder installierten Ruby-Version
+wird Rubygems mit installiert, welches das Installieren von externen
 Bibliotheken ermöglicht, wie z.B. das Rails Framework, welches für dieses
-Projekt verwenden wurde.
+Projekt verwendet wurde.
 Das Projekt wurde mit der Ruby-Version 2.2.2 entwickelt.
 
 ####Install Ruby
 Auf einigen Systemem, wie z.B. OSX, ist Ruby standardmäßig installiert.
-Um Ruby zu installieren benötigen wir den Ruby Versions Manager (RVM). Dieser
+Um Ruby zu installieren, benötigen wir den Ruby Versions Manager (RVM). Dieser
 lässt sich mit dem folgendem Befehl installieren:
 ```ruby
 \curl -sSL https://get.rvm.io | bash -s stable
@@ -25,7 +25,7 @@ installiert werden.
 rvm install 2.2.2
 ```
 ####Install Rails (via RubyGems)
-Nach der Installation von Ruby, kann mit folgendem Befehl das Rails Framework
+Nach der Installation von Ruby kann mit folgendem Befehl das Rails Framework
 installiert werden:
 ```ruby
 gem install rails
@@ -33,14 +33,14 @@ gem install rails
 
 ####Install Dependencies
 Damit das Projekt ausführbar ist, benötigt es alle Abhängigkeiten, die im
-Gemfile definiert sind. Diese können manuell oder automatische geladen werden.
-Um die Abhängigkeiten automatische zu laden benutzen wir Bundler, was das
+Gemfile definiert sind. Diese können manuell oder automatisch geladen werden.
+Um die Abhängigkeiten automatisch zu laden, benutzen wir Bundler, was das
 Maven (Java) für Ruby ist.
 
-Rails ist ebenfalls ein externe Abhängigkeit und kann auf dem selben Weg
+Rails ist ebenfalls eine externe Abhängigkeit und kann auf dem selben Weg
 installiert werden.
 
-Um die Abhängigkeite zu installieren muss einfach in Projekt navigiert werden
+Um die Abhängigkeiten zu installieren, muss einfach in das Projekt navigiert werden
 und folgender Befehl ausgeführt werden.
 ```
 cd <projekt-ordner>
@@ -51,12 +51,12 @@ bundle install
 
 ####Run Project
 Nachdem Ruby mit allen Abhängigkeiten installiert worden ist, kann mit dem
-integrierten Webserver von Rails, das Projekt gestartet werden.
+integrierten Webserver von Rails das Projekt gestartet werden.
 ```ruby
 bundle exec rails server
 ```
-Standardmäßig starte der Server auf Localhost mit dem Port 3000. Sollte dieser
-Port schon vergeben sein kann ein beliebiger Port mit dem `-p` Parameter
+Standardmäßig startet der Server auf Localhost mit dem Port 3000. Sollte dieser
+Port schon vergeben sein, kann ein beliebiger Port mit dem `-p` Parameter
 gesetzt werden:
 ```ruby
 bundle exec rails server -p <port>
@@ -71,7 +71,7 @@ localhost:3000/quiz
 ```
 
 ####Member
-`/member` zeigt ein Tabelle der Teilnehmer an diesem Projekt an. Diese Tabelle
+`/member` zeigt eine Tabelle der Teilnehmer an diesem Projekt an. Diese Tabelle
 wurde mit `XSLT` generiert. Eine
 [XML-Datei](https://github.com/markwitz/xml_Coding_Da_Vinci/blob/master/xml_member.xml)
 aus allen Teilnehmner dient als Quelle. Diese Information können mit
@@ -80,7 +80,7 @@ aus allen Teilnehmner dient als Quelle. Diese Information können mit
 ####Quiz
 `/quiz` zeigt ein simples Quiz an, welches aus
 [XMl-Dateien](https://github.com/markwitz/xml_Coding_Da_Vinci/tree/master/config/open_data_xml)
-aus OpenData stammen. Diese XML-Dateien wurden als zip herrunter geladen und in
+aus OpenData stammen. Diese XML-Dateien wurden als zip heruntergeladen und in
 dem Projekt als Datenquelle abgelegt.
 Aus den XMLs werden folgenden Information mit Xpath rausextrahiert:
 ```ruby
@@ -96,7 +96,7 @@ INFORMATION = {
 }
 ```
 
-Ein Objekt mit herrausgefilterten Information sieht wie folgt aus:
+Ein Objekt mit herausgefilterten Information sieht wie folgt aus:
 ```ruby
 {
   :flickr_link=>"https://flic.kr/p/rMBqoF",
@@ -112,10 +112,10 @@ Ein Objekt mit herrausgefilterten Information sieht wie folgt aus:
 #####QuizBuilder
 Mit diesen Objekten wurde mit dem
 [QuizBuilder](https://github.com/markwitz/xml_Coding_Da_Vinci/blob/master/lib/open_data/quiz_builder.rb)
-ein Fragebogen zusammen gestellt, der im Rahmen der Veranstaltung nach dem
-Namen des Author fragt.
-Der Fragebogen bietet 4 Antwortmöglichkeiten. Der Nutzer kann ein Antwort
-auswählen und klicken. Nach dem Klicke färben sich die falschen Antworten rot
+ein Fragebogen zusammengestellt, der im Rahmen der Veranstaltung nach dem
+Namen des Autors fragt.
+Der Fragebogen bietet 4 Antwortmöglichkeiten. Der Nutzer kann eine Antwort
+auswählen und anklicken. Nach dem Klicken färben sich die falschen Antworten rot
 und die richtige Antwort grün.
 
 ###Verwendete Technologien
