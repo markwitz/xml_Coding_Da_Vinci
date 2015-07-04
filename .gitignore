@@ -16,4 +16,6 @@
 !/log/.keep
 /tmp
 
+/config/flickr.yml
+
 .DS_Store
