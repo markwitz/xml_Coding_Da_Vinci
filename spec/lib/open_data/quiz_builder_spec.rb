@@ -29,6 +29,14 @@ describe OpenData::QuizBuilder do
         end
       end
 
+      it 'has no dublicated answers' do
+        current_author = 'yuiolkmnbgftyuj'
+        answers.each do |answer|
+          expect(answer[:title]).not_to eq current_author
+          current_author = answer[:title]
+        end
+      end
+
       it 'has only one right answer' do
         right_answers = answers.map { |answer| answer[:right] }
         expect(right_answers.count(true)).to eq 1
