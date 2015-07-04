@@ -1,10 +1,126 @@
 # xml_Coding_Da_Vinci
 XML Projekt Coding Da Vinci
 
+##How run the quiz locally
+###Install Requirements
+Damit das Projekt Lokal auf dem Rechner ausgeführt werden kann, benötigt das
+System eine installierte Ruby version. Mit jeder installierten Ruby version
+wird Rubygems mit installiert, welches das Installieren von Externen
+Bibliotheken ermöglicht, wie z.B. das Rails Framework, welches für dieses
+Projekt verwenden wurde.
+Das Projekt wurde mit der Ruby-Version 2.2.2 entwickelt.
 
-## Kontaktinformationen
+####Install Ruby
+Auf einigen Systemem, wie z.B. OSX, ist Ruby standardmäßig installiert.
+Um Ruby zu installieren benötigen wir den Ruby Versions Manager (RVM). Dieser
+lässt sich mit dem folgendem Befehl installieren:
+```ruby
+\curl -sSL https://get.rvm.io | bash -s stable
+```
 
-| Name        | Vorname   | E-Mail                          | Handynummer      |
-|-------------|-----------|---------------------------------|------------------|
-| Herich      | Lucas     | fu@herich.net                   | 0152 52 42 46 33 |
-| Kunze       | Paul      | paul.kunze@fu-berlin.de         |                  |
+Damit RVM problemlos funktioniert, benötigt es die shell als Login-Shell.
+Mit dieser Einstellung kann mit folgendem Befehl Ruby mit der Version 2.2.2
+installiert werden.
+```ruby
+rvm install 2.2.2
+```
+####Install Rails (via RubyGems)
+Nach der Installation von Ruby, kann mit folgendem Befehl das Rails Framework
+installiert werden:
+```ruby
+gem install rails
+```
+
+####Install Dependencies
+Damit das Projekt ausführbar ist, benötigt es alle Abhängigkeiten, die im
+Gemfile definiert sind. Diese können manuell oder automatische geladen werden.
+Um die Abhängigkeiten automatische zu laden benutzen wir Bundler, was das
+Maven (Java) für Ruby ist.
+
+Rails ist ebenfalls ein externe Abhängigkeit und kann auf dem selben Weg
+installiert werden.
+
+Um die Abhängigkeite zu installieren muss einfach in Projekt navigiert werden
+und folgender Befehl ausgeführt werden.
+```
+cd <projekt-ordner>
+```
+```ruby
+bundle install
+```
+
+####Run Project
+Nachdem Ruby mit allen Abhängigkeiten installiert worden ist, kann mit dem
+integrierten Webserver von Rails, das Projekt gestartet werden.
+```ruby
+bundle exec rails server
+```
+Standardmäßig starte der Server auf Localhost mit dem Port 3000. Sollte dieser
+Port schon vergeben sein kann ein beliebiger Port mit dem `-p` Parameter
+gesetzt werden:
+```ruby
+bundle exec rails server -p <port>
+```
+
+###Rest Api
+Die Rest Api des Projektes hört auf folgende Schnittstellen:
+`/member`, `member.xml` und `/quiz`.
+Die URL auf localhost mit dem port 3000 sieht wie folgt aus:
+```
+localhost:3000/quiz
+```
+
+####Member
+`/member` zeigt ein Tabelle der Teilnehmer an diesem Projekt an. Diese Tabelle
+wurde mit `XSLT` generiert. Eine
+[XML-Datei](https://github.com/markwitz/xml_Coding_Da_Vinci/blob/master/xml_member.xml)
+aus allen Teilnehmner dient als Quelle. Diese Information können mit
+`/member.xml` im Browser angezeigt werden.
+
+####Quiz
+`/quiz` zeigt ein simples Quiz an, welches aus
+[XMl-Dateien](https://github.com/markwitz/xml_Coding_Da_Vinci/tree/master/config/open_data_xml)
+aus OpenData stammen. Diese XML-Dateien wurden als zip herrunter geladen und in
+dem Projekt als Datenquelle abgelegt.
+Aus den XMLs werden folgenden Information mit Xpath rausextrahiert:
+```ruby
+INFORMATION = {
+  flickr_link: '//lido:linkResource',
+  fotograph: '//lido:legalBodyName//lido:appellationValue',
+  actor_name: '//lido:nameActorSet//lido:appellationValue',
+  actor_role: '//lido:roleActor//lido:term',
+  nationality: '//lido:nationalityActor//lido:term',
+  material: '//lido:termMaterialsTech//lido:term',
+  title: '//lido:titleSet//lido:appellationValue',
+  date: '//lido:eventDate//lido:displayDate'
+}
+```
+
+Ein Objekt mit herrausgefilterten Information sieht wie folgt aus:
+```ruby
+{
+  :flickr_link=>"https://flic.kr/p/rMBqoF",
+  :fotograph=>"Berlinische Galerie - Landesmuseum für Moderne Kunst, Fotografie und Architektur (Berlin)",
+  :actor_name=>"Walter Leistikow",
+  :actor_role=>"Maler",
+  :nationality=>"Deutschland",
+  :material=>"Öl auf Holz",
+  :title=>"Warnemünde", :date=>"1886"
+}
+```
+
+#####QuizBuilder
+Mit diesen Objekten wurde mit dem
+[QuizBuilder](https://github.com/markwitz/xml_Coding_Da_Vinci/blob/master/lib/open_data/quiz_builder.rb)
+ein Fragebogen zusammen gestellt, der im Rahmen der Veranstaltung nach dem
+Namen des Author fragt.
+Der Fragebogen bietet 4 Antwortmöglichkeiten. Der Nutzer kann ein Antwort
+auswählen und klicken. Nach dem Klicke färben sich die falschen Antworten rot
+und die richtige Antwort grün.
+
+###Verwendete Technologien
+* REST API (RAILS)
+* XSLT
+* XPATH
+* SPARQL
+* [BASEX](https://github.com/markwitz/xml_Coding_Da_Vinci/blob/master/doc/basex/ermittlung_der_kuenstlernamen.md)
