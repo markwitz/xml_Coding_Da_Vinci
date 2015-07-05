@@ -2,7 +2,7 @@
 
 ------------
 
-Wir benutzen SPARQL um zusätliche Infos zu den Künstlern der Bilder zu holen. Diese Daten werden von http://de.dbpedia.org/sparql abgefragt. Wir nutzen dazu die Bibliotheken von Apahe Jena für Java.
+Wir benutzen SPARQL um zusätliche Infos zu den Künstlern der Bilder zu holen. Diese Daten werden von http://de.dbpedia.org/sparql abgefragt. Wir nutzen dazu die Bibliotheken von Apache Jena für Java.
 Die Künstlernamen wurden zuvor mittels XPath aus den XML-Dateien von OpenData herrausgesucht.
 
 
