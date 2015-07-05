@@ -125,5 +125,5 @@ und die richtige Antwort grün.
 * REST API (RAILS)
 * XSLT
 * XPATH
-* [SPARQL](https://github.com/markwitz/xml_Coding_Da_Vinci/blob/master/doc/basex/ermittlung_der_kuenstlernamen.md)
-* [BASEX](https://github.com/markwitz/xml_Coding_Da_Vinci/blob/master/doc/sparql/Sparql.md)
+* [SPARQL](https://github.com/markwitz/xml_Coding_Da_Vinci/blob/master/doc/sparql/Sparql.md)
+* [BASEX](https://github.com/markwitz/xml_Coding_Da_Vinci/blob/master/doc/basex/ermittlung_der_kuenstlernamen.md)
