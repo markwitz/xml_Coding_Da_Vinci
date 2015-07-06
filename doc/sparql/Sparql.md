@@ -6,10 +6,10 @@ Wir benutzen SPARQL um zusätliche Infos zu den Künstlern der Bilder zu holen. 
 Die Künstlernamen wurden zuvor mittels XPath aus den XML-Dateien von OpenData herrausgesucht.
 
 
-zuerst wurde eine Liste mit den Namen angelegt.    
- 
-    List<String> strList= new ArrayList<String>();
+zuerst wurde eine Liste mit den Namen angelegt.
 
+```java
+    List<String> strList= new ArrayList<String>();
     /* names */
 
     strList.add("Walter Leistikow");
@@ -25,15 +25,15 @@ zuerst wurde eine Liste mit den Namen angelegt.
     strList.add("Anton von Werner");
     strList.add("Adolph von Menzel");
     strList.add("Carl Kayser-Eichberg");
-    strList.add("Gerhard Geidel"); 
-    strList.add("Elisabeth von Eicken"); 
+    strList.add("Gerhard Geidel");
+    strList.add("Elisabeth von Eicken");
 
     /* ********* */
-
+```
 Für diese Namen wurden dann Abfragen nach dem Namen, zusätzlichen Infos, dem Geburtstag, dem Todestag und falls vorhanden dem Bildlink vom Künstler getätigt.
 Diese Ergebnisse wurden dann für jeden Künstler in eine eigene XML gepackt.
 
-
+```java
      for (int i = 0; i < strList.size(); i++) {
 
       str = strList.get(i);
@@ -49,7 +49,7 @@ Diese Ergebnisse wurden dann für jeden Künstler in eine eigene XML gepackt.
         "?artist dbpedia-owl:deathDate ?death. "+
         "OPTIONAL {?artist dbpedia-owl:thumbnail ?piclink} "+
         "}";
-       
+
       Query query = QueryFactory.create(queryString);
       qe = QueryExecutionFactory.sparqlService(service, query);
       results = qe.execSelect();
@@ -64,16 +64,16 @@ Diese Ergebnisse wurden dann für jeden Künstler in eine eigene XML gepackt.
         qe.close();
         out.close();
       }
-    } 
-
+    }
+```
 
 Nun musste ein für einen Namen eine neue abfrage vorgenommen werden, da dieser kein Eintrag für rdfs:comment hatte und deshalb dc:description benutzt wurde.
 
-
-    strList.clear(); 
+```java
+    strList.clear();
     strList.add("George Mosson");
     //names with dc:description instead of rdfs:comment
-    
+
     for (int i = 0; i < strList.size(); i++) {
         str = strList.get(i);
         String queryString = "PREFIX foaf: <http://xmlns.com/foaf/0.1/> \n"+
@@ -88,15 +88,15 @@ Nun musste ein für einen Namen eine neue abfrage vorgenommen werden, da dieser 
           "?artist dbpedia-owl:deathDate ?death. "+
           "OPTIONAL {?artist dbpedia-owl:thumbnail ?piclink} "+
           "}";
-
+```
  Es gab noch 2 weitere Künstler deren Namen aber mehrfach in dbpedia vorhanden waren für diese wurde der Bildlink als Pflicht genommen um hier andere Personen zu entfernen. Dabei hatte der Eintrag für den zweiten Künstler in dbpedia keine Informationen.
 
-
+```java
     strList.clear();
-    strList.add("Ulrich Hübner"); 
+    strList.add("Ulrich Hübner");
     strList.add("Hans Herrmann"); // no result
     //names with more entries in dbpedia
-    
+
     for (int i = 0; i < strList.size(); i++) {
         str = strList.get(i);
         String queryString = "PREFIX foaf: <http://xmlns.com/foaf/0.1/> \n"+
@@ -111,10 +111,11 @@ Nun musste ein für einen Namen eine neue abfrage vorgenommen werden, da dieser 
           "?artist dbpedia-owl:deathDate ?death. "+
           "?artist dbpedia-owl:thumbnail ?piclink "+
           "}";
-         
+```
 
 Die so erhaltenen XML-Dateien sehen dann wie folgt aus:
 
+```xml
     <?xml version="1.0"?>
 	<sparql xmlns="http://www.w3.org/2005/sparql-results#">
  	<head>
@@ -144,3 +145,12 @@ Die so erhaltenen XML-Dateien sehen dann wie folgt aus:
     </result>
   </results>
 </sparql>
+```
+
+Die ausführbare `Jar` Datei liegt im java ordern.
+```sh
+cd java/
+```
+```sh
+java -jar sparql.jar
+```
