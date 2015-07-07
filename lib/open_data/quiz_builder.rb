@@ -1,7 +1,9 @@
 class OpenData::QuizBuilder
 
   def initialize
-    @informations = OpenData::Parser.new.informations
+    @parser = OpenData::Parser.new
+    @informations = @parser.informations
+    @authors = @parser.authors
   end
 
   def random_question_set_of_ten
@@ -29,20 +31,30 @@ class OpenData::QuizBuilder
   end
 
   def create_answers
-    answers = Array.new(4)
-    right_answer = { title: information_set, right: true }
-    answers.map! do
-      @current_index += 1
-      {
-        title: information_set,
-        right: false
-      }
-    end
-    answers[2] = right_answer
+    @authors.delete(information_set)
+    right_answer = answer(information_set, true)
+    answers = four_wrong_answers
+    reset_all_authors
+    answers[rand(answers.count)] = right_answer
     answers
+  end
+
+  def four_wrong_answers
+    answers = Array.new(4)
+    answers.map! do |answer|
+      answer(@authors.pop)
+    end
+  end
+
+  def answer(title, right = false)
+    { title: title, right: right }
   end
 
   def information_set
     @informations[@current_index][@question_type]
+  end
+
+  def reset_all_authors
+    @authors = @parser.authors
   end
 end

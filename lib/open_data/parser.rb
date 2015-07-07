@@ -13,12 +13,16 @@ module OpenData
       date: '//lido:eventDate//lido:displayDate'
     }
 
-    def initializer
+    def initialize
       @informations = informations_from_open_data_xmls
     end
 
-    def informations
-      informations_from_open_data_xmls
+    def authors
+      authors = []
+      @informations.each do |object|
+        authors << object[:actor_name]
+      end
+      authors.uniq
     end
 
     private
