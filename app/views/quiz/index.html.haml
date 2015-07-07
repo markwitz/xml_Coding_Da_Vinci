@@ -1,7 +1,7 @@
--@questions.each do |question|
+-@questions.each_with_index do |question, index|
   %div.question-box
     %div.question-image.col-lg-10
-      %img{ src: "https://www.flickr.com/photos/91015233@N08/16925072491/" }
+      %img{ src: @image_links[index] }
     %div.question-set.col-lg-2
       %h3.title=question[:title]
       -question[:answers].each do |answer|
