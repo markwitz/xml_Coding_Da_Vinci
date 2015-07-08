@@ -1,6 +1,6 @@
 #XSLT
-Mit Hilfe von XSLT wurden Informationen aus einer XML-Datei in HTML
-presentiert.
+Mit Hilfe von XSLT werden Informationen aus einer XML-Datei in HTML
+konvertiert und präsentiert.
 
 ##Transformation
 Informationen zu den Teammitgliedern befinden sich in folgendem XML-Format:
@@ -9,7 +9,7 @@ Informationen zu den Teammitgliedern befinden sich in folgendem XML-Format:
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:noNamespaceSchemaLocation="xml_member.xsd">
   <name>XML Coding Da Vinci</name>
-  <description>Machen irgendwas</description>
+  <description>Ein Bilder-Quiz als Projekt an der FU Berlin</description>
   <members>
     <member>
       <name>Paul Kunze</name>
@@ -50,8 +50,8 @@ Informationen zu den Teammitgliedern befinden sich in folgendem XML-Format:
 </project>
 ```
 
-Damit HTML aus den gegebenen XML Daten ausgeben werden kann, benötigen wir ein
-XSLT-Template, welche wie folgt aussieht:
+Damit HTML aus dem gegebenen XML Daten ausgeben kann, benötigen wir ein
+XSLT-Template, welches wie folgt aussieht:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -93,18 +93,17 @@ XSLT-Template, welche wie folgt aussieht:
 ```
 
 Wie in dem Template zu erkennen ist, werden Name, Abschluss und die Universität
-des Studenten, aus der XML ausgelesen und in HTML Tags verpackt. Diese HTML
-Elemente besitzen neben den HTML-Tags auch CSS-Klassen.
+des Studenten aus der XML ausgelesen und in HTML Tags verpackt. Diese HTML-Elemente besitzen neben den HTML-Tags auch CSS-Klassen.
 
 ##Verwendete Bibliothek
-Um die Transformation von XML zu HTML zu gewähleisten. Wurde auf die Ruby
+Um die Transformation von XML zu HTML zu gewährleisten, wurde auf die Ruby
 Bibliothek [Nokogiri](http://www.nokogiri.org/) zugegriffen.
 Installieren lässt sich Nokogiri mit folgendem Befehl:
 ```ruby
 gem install nokogiri
 ```
 
-Folgende Zeilen dienen für die Transfomartion von XML zu HTML:
+Folgende Zeilen dienen der Transformation von XML zu HTML:
 ```ruby
 @document = Nokogiri::XML(File.read('xml_member.xml'))
 template = Nokogiri::XSLT(File.read('app/views/default/member.xslt'))
