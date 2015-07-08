@@ -2,11 +2,11 @@
 
 ------------
 
-Wir benutzen SPARQL um zusätliche Infos zu den Künstlern der Bilder zu holen. Diese Daten werden von http://de.dbpedia.org/sparql abgefragt. Wir nutzen dazu die Bibliotheken von Apache Jena für Java.
-Die Künstlernamen wurden zuvor mittels XPath aus den XML-Dateien von OpenData herrausgesucht.
+Wir benutzen SPARQL, um zusätzliche Infos zu den Künstlern der Bilder abzurufen. Diese Daten werden von http://de.dbpedia.org/sparql abgefragt. Wir nutzen dazu die Bibliotheken von Apache Jena für Java.
+Die Künstlernamen wurden zuvor mittels XPath aus den XML-Dateien von OpenData herausgesucht.
 
 
-zuerst wurde eine Liste mit den Namen angelegt.
+Zuerst wurde eine Liste mit den Namen angelegt.
 
 ```java
     List<String> strList= new ArrayList<String>();
@@ -30,7 +30,7 @@ zuerst wurde eine Liste mit den Namen angelegt.
 
     /* ********* */
 ```
-Für diese Namen wurden dann Abfragen nach dem Namen, zusätzlichen Infos, dem Geburtstag, dem Todestag und falls vorhanden dem Bildlink vom Künstler getätigt.
+Für diese Namen wurden dann Abfragen nach dem Namen, zusätzlichen Infos, dem Geburtstag, dem Todestag und falls vorhanden dem Bildlink vom Künstler ausgeführt.
 Diese Ergebnisse wurden dann für jeden Künstler in eine eigene XML gepackt.
 
 ```java
@@ -67,7 +67,7 @@ Diese Ergebnisse wurden dann für jeden Künstler in eine eigene XML gepackt.
     }
 ```
 
-Nun musste ein für einen Namen eine neue abfrage vorgenommen werden, da dieser kein Eintrag für rdfs:comment hatte und deshalb dc:description benutzt wurde.
+Nun musste für einen Namen eine neue Abfrage vorgenommen werden, da dieser keinen Eintrag für rdfs:comment hatte und deshalb dc:description benutzt werden musste.
 
 ```java
     strList.clear();
@@ -89,7 +89,7 @@ Nun musste ein für einen Namen eine neue abfrage vorgenommen werden, da dieser 
           "OPTIONAL {?artist dbpedia-owl:thumbnail ?piclink} "+
           "}";
 ```
- Es gab noch 2 weitere Künstler deren Namen aber mehrfach in dbpedia vorhanden waren für diese wurde der Bildlink als Pflicht genommen um hier andere Personen zu entfernen. Dabei hatte der Eintrag für den zweiten Künstler in dbpedia keine Informationen.
+ Es gab noch 2 weitere Künstler, deren Namen aber mehrfach in dbpedia vorhanden waren. Für diese wurde der Bildlink als Pflicht genommen, um hier andere Personen zu entfernen. Dabei hatte der Eintrag für den zweiten Künstler in dbpedia keine Informationen.
 
 ```java
     strList.clear();
@@ -147,7 +147,7 @@ Die so erhaltenen XML-Dateien sehen dann wie folgt aus:
 </sparql>
 ```
 
-Die ausführbare `Jar` Datei liegt im java ordern.
+Die ausführbare `Jar` Datei liegt im java-Ordner.
 ```sh
 cd java/
 ```
