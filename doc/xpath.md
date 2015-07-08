@@ -1,8 +1,8 @@
 #XPath
-Das Ziel des Projektes ist ein Bilderrätzel (Quiz) aus Informationen von
+Das Ziel des Projektes ist es, ein Bilderrätsel (Quiz) aus Informationen von
 XML-Dateien zu generien. Dazu wurden XML-Dateien aus
-[offendedaten.de](https://offenedaten.de/) heruntergeladen und programatisch
-ausgelesen. Um Informationen aus den XML zu gewinnen wird XPath genutzt.
+[offendedaten.de](https://offenedaten.de/) heruntergeladen und programmatisch
+ausgelesen. Um Informationen aus den XML-Dateien zu gewinnen wird XPath genutzt.
 
 ##Informationen in XML
 
@@ -48,8 +48,8 @@ Eine XML-Datei aus offenedaten.de sieht wie folgt aus:
 ```
 
 ###Einlesen mit XPath
-Die XPath Pfade wurde manuell ermittelt. Jeder Pfad der relevant ist für das
-Bilderrätzel wurde in einem Ruby Objekt als Key-Value-Pair gespeichert:
+Die XPath-Pfade wurden manuell ermittelt. Jeder Pfad, der relevant ist für das
+Bilderrätsel, wurde in einem Ruby-Objekt als Key-Value-Pair gespeichert:
 
 ```ruby
 INFORMATION = {
@@ -65,7 +65,7 @@ INFORMATION = {
 ```
 
 Dieses Objekt dient als Template für das Ergebnis. Jede XML-Datei wird in Form
-eines Objektes, wie oben abgebildet, dargestellt, nur mit den Informationen als
-Value, anstelle der Path-Pfade. Der komplette Source code zu der
+eines Objektes, wie oben abgebildet, dargestellt. Allerdings mit den Informationen als
+Value anstelle der Path-Pfade. Der komplette Source-Code zu der
 Informationsgewinnung mit XPath befindet sich im
 [OpenData::Parser](https://github.com/markwitz/xml_Coding_Da_Vinci/blob/master/lib/open_data/parser.rb)
