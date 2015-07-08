@@ -2,7 +2,7 @@
 Repository zum studentischen XML-Projekt im Rahmen des Wettbewerbs "Coding Da Vinci".
 
 ##Project Idea
-Unsere Projektidee ist ein interaktives Bilderquiz, bei dem ein Gemälde und eine Frage sowie vier Antworten dazu angezeigt werden. Die Frage bezieht sich zum Beispiel auf den Künstler, die Epoche, die eingesetzte Technik oder ein ähnliches Thema, das zu dem jeweiligen Gemälde gestellt werden kann. Bei der Auswahl einer Antwort werden anschließend alle falschen Antwortmöglichkeiten rot und die richtige grün eingefärbt. Außerdem werden weitere Zusatzinformationen über das Werk und den Künstler angezeigt. Die nächste Frage kann beantwortet werden, wenn man auf den entsprechenden Button klickt.
+Unsere Projektidee ist ein interaktives Bilderquiz, bei dem ein Gemälde und eine Frage sowie vier Antworten dazu angezeigt werden. Die Frage bezieht sich zum Beispiel auf den Künstler, die Epoche, die eingesetzte Technik oder ein ähnliches Thema, das zu dem jeweiligen Gemälde gestellt werden kann. Bei der Auswahl einer Antwort werden anschließend alle falschen Antwortmöglichkeiten rot und die richtige grün eingefärbt. Außerdem werden weitere Zusatzinformationen über den Künstler angezeigt. Die nächste Frage kann beantwortet werden, wenn man auf den entsprechenden Button klickt.
 
 ##How run the quiz locally
 ###Install Requirements
@@ -87,15 +87,15 @@ localhost:3000/quiz
 `/member` zeigt eine Tabelle der Teilnehmer an diesem Projekt an. Diese Tabelle
 wurde mit `XSLT` generiert. Eine
 [XML-Datei](https://github.com/markwitz/xml_Coding_Da_Vinci/blob/master/xml_member.xml)
-aus allen Teilnehmner dient als Quelle. Diese Information können mit
+aus allen Teilnehmern dient als Quelle. Diese Informationen können mit
 `/member.xml` im Browser angezeigt werden.
 
 ####Quiz
 `/quiz` zeigt ein simples Quiz an, welches aus
 [XMl-Dateien](https://github.com/markwitz/xml_Coding_Da_Vinci/tree/master/config/open_data_xml)
-aus OpenData stammen. Diese XML-Dateien wurden als zip heruntergeladen und in
+von OpenData besteht. Diese XML-Dateien wurden als zip heruntergeladen und in
 dem Projekt als Datenquelle abgelegt.
-Aus den XMLs werden folgenden Information mit Xpath rausextrahiert:
+Aus den XMLs werden folgenden Informationen mit Xpath herausextrahiert:
 ```ruby
 INFORMATION = {
   flickr_link: '//lido:linkResource',
