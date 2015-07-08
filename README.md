@@ -17,6 +17,11 @@ Das Projekt wurde mit der Ruby-Version 2.2.2 entwickelt.
 Auf einigen Systemem, wie z.B. OSX, ist Ruby standardmäßig installiert.
 Um Ruby zu installieren, benötigen wir den Ruby Versions Manager (RVM). Dieser
 lässt sich mit dem folgendem Befehl installieren:
+
+```ruby
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+```
+
 ```ruby
 \curl -sSL https://get.rvm.io | bash -s stable
 ```
