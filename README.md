@@ -57,6 +57,11 @@ cd <projekt-ordner>
 bundle install
 ```
 
+Gegebenenfalls muss Bundler erst installiert werden:
+```ruby
+gem install bundler
+```
+
 ####Run Project
 Nachdem Ruby mit allen Abhängigkeiten installiert worden ist, kann mit dem
 integrierten Webserver von Rails das Projekt gestartet werden.
