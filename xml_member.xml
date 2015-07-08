@@ -2,7 +2,7 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:noNamespaceSchemaLocation="xml_member.xsd">
   <name>XML Coding Da Vinci</name>
-  <description>Machen irgendwas</description>
+  <description>Ein Bilder-Quiz als Projekt an der FU Berlin</description>
   <members>
     <member>
       <name>Paul Kunze</name>
