@@ -1,5 +1,5 @@
 #Rest API
-Die REST-Api die für das Bilderquiz verwendet wurde ist die von REST-Api, die
+Die REST-Api, die für das Bilderquiz verwendet wird, ist diejenige, die
 [Ruby on Rails](http://guides.rubyonrails.org/routing.html) zur Verfügung
 stellt.
 
@@ -10,9 +10,9 @@ Folgende Pfade werden im Programm unterstützt:
 * `/quiz`
 
 ##Routes and Controllers
-Jeder Pfad wird wird von der
+Jeder Pfad wird von der
 [routes.rb](https://github.com/markwitz/xml_Coding_Da_Vinci/blob/master/config/routes.rb)
-an den jeweiligen Controller weitergeben.
+an den jeweiligen Controller weitergegeben.
 
 ###DefaultController
 Im DefaultController werden folgende Pfade verarbeitet:
@@ -33,9 +33,9 @@ end
 ```
 
 ###QuizController
-Um das Quiz anzeigen zu können, wird mit Hilfe des QuizControllers, der Pfad
-empfand, das Quiz zusammengebaut und in der View gerendert.
-Der ist wie folgt:
+Um das Quiz anzeigen zu können, wird mit Hilfe des QuizControllers der Pfad (Path)
+empfangen, das Quiz zusammengebaut und in der View gerendert.
+Der Controller-Code ist wie folgt:
 ```ruby
 class QuizController < ApplicationController
   def index
